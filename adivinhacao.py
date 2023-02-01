@@ -79,11 +79,11 @@ def jogo():
                 print("Você errou! O seu chute foi menor que o número secreto. Tente de novo.")
                 continue
             elif (nivel == 1 and rodada == 20):
-                print("Você errou. O número secreto era {}e você fez {} pontos.".format(numero_secreto, pontos))
+                print("Você errou. O número secreto era {}. Você fez {} pontos.".format(numero_secreto, pontos))
             elif (nivel == 2 and rodada == 10):
-                print("Você errou. O número secreto era {}e você fez {} pontos.".format(numero_secreto, pontos))
+                print("Você errou. O número secreto era {}. Você fez {} pontos.".format(numero_secreto, pontos))
             elif (nivel == 3 and rodada == 5):
-                print("Você errou. O número secreto era {} e você fez {} pontos.".format(numero_secreto, pontos))
+                print("Você errou. O número secreto era {}. Você fez {} pontos.".format(numero_secreto, pontos))
 
             de_novo = str(input("Quer jogar mais uma vez? Digite 'S' para 'SIM' e 'N' para 'NÃO': "))
             if (de_novo == "S" or de_novo == "s"):
