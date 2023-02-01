@@ -25,7 +25,7 @@ def jogo():
             total_de_tentativas = 5
             break
         else:
-            print("Número inválido. Você deve digitar '1' para fácil, '2' para médio ou '3' para difícil'. Escolha novamente.")
+            print("Número inválido. Você deve digitar '1' para 'Fácil', '2' para 'Médio' ou '3' para 'Difícil'. Escolha novamente.")
             continue    
 
     if (nivel == 1):
