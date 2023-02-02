@@ -93,7 +93,7 @@ def jogar_novamente():
         print("Obrigado por jogar conosco! Tchau!")
         print("Fim de jogo!")
     else:
-        print("Não entendi, você deve digitar 'S' para 'SIM' ou 'N' para 'NÂO'. Escolha novamente.")
+        print("Não entendi, você deve digitar 'S' para 'SIM' ou 'N' para 'NÃO'. Escolha novamente.")
         jogar_novamente()
 
 jogo()
