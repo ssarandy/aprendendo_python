@@ -10,7 +10,7 @@ def jogo():
     pontos = 1000
 
     print("Qual o nível de dificuldade?")
-    print("(1) Fácil (2) Médio (3) Difícil")
+    print("(1) Fácil: 20 tentativas\n(2) Médio: 10 tentativas\n(3) Difícil: 5 tentativas")
 
     while(True):
         nivel = int(input("Escolha: "))
@@ -76,12 +76,13 @@ def jogo():
                 continue
             elif (nivel == 1 and rodada == 20):
                 print("Você errou. O número secreto era {}. Você fez {} pontos.".format(numero_secreto, pontos))
+                jogar_novamente()
             elif (nivel == 2 and rodada == 10):
                 print("Você errou. O número secreto era {}. Você fez {} pontos.".format(numero_secreto, pontos))
+                jogar_novamente()
             elif (nivel == 3 and rodada == 5):
                 print("Você errou. O número secreto era {}. Você fez {} pontos.".format(numero_secreto, pontos))
-
-            jogar_novamente()
+                jogar_novamente()
 
 
 
