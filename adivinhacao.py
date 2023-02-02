@@ -52,12 +52,8 @@ def jogo():
         
         if (acertou):
             print("Parabéns! Você acertou e fez {} pontos!".format(pontos))
-            de_novo = str(input("Quer jogar mais uma vez? Digite 'S' para 'SIM' e 'N' para 'NÃO': "))
-            if (de_novo == "S" or de_novo == "s"):
-                jogo()
-            elif (de_novo != "S" or "s"):
-                print("Obrigado por jogar conosco! Tchau!")
-                break
+            break
+            jogar_novamente()
 
         else:
             if (nivel == 1 and rodada < 20 and chute > numero_secreto):
@@ -85,13 +81,19 @@ def jogo():
             elif (nivel == 3 and rodada == 5):
                 print("Você errou. O número secreto era {}. Você fez {} pontos.".format(numero_secreto, pontos))
 
-            de_novo = str(input("Quer jogar mais uma vez? Digite 'S' para 'SIM' e 'N' para 'NÃO': "))
-            if (de_novo == "S" or de_novo == "s"):
-                jogo()
-            elif (de_novo != "S" or "s"):
-                print("Obrigado por jogar conosco! Tchau!")
-                break
+            jogar_novamente()
 
-    print("Fim de jogo!")
+
+
+def jogar_novamente():
+    de_novo = str(input("Quer jogar mais uma vez? Digite 'S' para 'SIM' ou 'N' para 'NÃO': "))
+    if (de_novo == "S" or de_novo == "s"):
+        jogo()
+    elif(de_novo == "N" or de_novo == "n"):
+        print("Obrigado por jogar conosco! Tchau!")
+        print("Fim de jogo!")
+    else:
+        print("Não entendi, você deve digitar 'S' para 'SIM' ou 'N' para 'NÂO'. Escolha novamente.")
+        jogar_novamente()
 
 jogo()
