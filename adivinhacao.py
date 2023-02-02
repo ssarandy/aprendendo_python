@@ -37,10 +37,7 @@ def jogo():
         chute = int(input("Digite um número entre 1 e 100: "))
         print("Você digitou: ", chute)
 
-        if(chute < 1 or chute > 100):
-            print("Você deve digitar um número entre 1 e 100.")
-            continue
-        
+        erro = (chute < 1 or chute > 100)
         acertou = chute == numero_secreto
         maior = chute > numero_secreto
         menor = chute < numero_secreto
@@ -49,38 +46,61 @@ def jogo():
         
         if (acertou):
             print("Parabéns! Você acertou e fez {} pontos!".format(pontos))
-            break
             jogar_novamente()
+            break
 
         else:
-            if (nivel == 1 and rodada < 20 and chute > numero_secreto):
+            if (nivel == 1 and rodada < 20 and chute >= 1 and chute <= 100 and chute > numero_secreto):
                 print("Você errou! O seu chute foi maior que o número secreto. Tente de novo.")
                 continue
-            elif (nivel == 1 and rodada < 20 and chute < numero_secreto):
+            elif (nivel == 1 and rodada < 20 and chute >= 1 and chute <= 100 and chute < numero_secreto):
                 print("Você errou! O seu chute foi menor que o número secreto. Tente de novo.")
                 continue
-            elif (nivel == 2 and rodada < 10 and chute > numero_secreto):
+            elif (nivel == 2 and rodada < 10 and chute >= 1 and chute <= 100 and chute > numero_secreto):
                 print("Você errou! O seu chute foi maior que o número secreto. Tente de novo.")
                 continue
-            elif (nivel == 2 and rodada < 10 and chute < numero_secreto):
+            elif (nivel == 2 and rodada < 10 and chute >= 1 and chute <= 100 and chute < numero_secreto):
                 print("Você errou! O seu chute foi menor que o número secreto. Tente de novo.")
                 continue
-            elif (nivel == 3 and rodada < 5 and chute > numero_secreto):
+            elif (nivel == 3 and rodada < 5 and chute >= 1 and chute <= 100 and chute > numero_secreto):
                 print("Você errou! O seu chute foi maior que o número secreto. Tente de novo.")
                 continue
-            elif (nivel == 3 and rodada < 5 and chute < numero_secreto):
+            elif (nivel == 3 and rodada < 5 and chute >= 1 and chute <= 100 and chute < numero_secreto):
                 print("Você errou! O seu chute foi menor que o número secreto. Tente de novo.")
                 continue
-            elif (nivel == 1 and rodada == 20):
+            elif(nivel == 1 and rodada < 20 and erro):
+                print("Você deve digitar um número entre 1 e 100. Próxima tentativa.")
+                continue
+            elif(nivel == 2 and rodada < 10 and erro):
+                print("Você deve digitar um número entre 1 e 100. Próxima tentativa.")
+                continue
+            elif(nivel == 3 and rodada < 5 and erro):
+                print("Você deve digitar um número entre 1 e 100. Próxima tentativa.")
+                continue
+            elif(nivel == 1 and rodada == 20 and erro):
+                print("Você deve digitar um número entre 1 e 100. Fim das tentativas. O número secreto era {}. Você fez {} pontos.".format(numero_secreto, pontos))
+                jogar_novamente()
+                break
+            elif(nivel == 2 and rodada == 10 and erro):
+                print("Você deve digitar um número entre 1 e 100. Fim das tentativas. O número secreto era {}. Você fez {} pontos.".format(numero_secreto, pontos))
+                jogar_novamente()
+                break
+            elif(nivel == 3 and rodada == 5 and erro):
+                print("Você deve digitar um número entre 1 e 100. Fim das tentativas. O número secreto era {}. Você fez {} pontos.".format(numero_secreto, pontos))
+                jogar_novamente()
+                break
+            elif (nivel == 1 and rodada == 20 and chute >= 1 and chute <= 100):
                 print("Você errou. O número secreto era {}. Você fez {} pontos.".format(numero_secreto, pontos))
                 jogar_novamente()
-            elif (nivel == 2 and rodada == 10):
+                break
+            elif(nivel == 2 and rodada == 10 and chute >= 1 and chute <= 100):
                 print("Você errou. O número secreto era {}. Você fez {} pontos.".format(numero_secreto, pontos))
                 jogar_novamente()
-            elif (nivel == 3 and rodada == 5):
+                break
+            elif(nivel == 3 and rodada == 5 and chute >= 1 and chute <= 100):
                 print("Você errou. O número secreto era {}. Você fez {} pontos.".format(numero_secreto, pontos))
                 jogar_novamente()
-
+                break
 
 
 def jogar_novamente():
