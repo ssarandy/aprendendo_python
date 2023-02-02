@@ -16,24 +16,21 @@ def jogo():
         nivel = int(input("Escolha: "))
 
         if (nivel == 1):
+            print("**** Nível FÁCIL ****")
             total_de_tentativas = 20
             break
         elif (nivel == 2):
+            print("**** Nível MÉDIO ****")
             total_de_tentativas = 10
             break
         elif (nivel == 3):
+            print("**** Nível DIFÍCIL ****")
             total_de_tentativas = 5
             break
         else:
             print("Número inválido. Você deve digitar '1' para 'Fácil', '2' para 'Médio' ou '3' para 'Difícil'. Escolha novamente.")
             continue    
 
-    if (nivel == 1):
-        print("**** Nível FÁCIL ****")
-    elif (nivel == 2):
-        print("**** Nível MÉDIO ****")
-    elif (nivel == 3):
-        print("**** Nível DIFÍCIL ****")
         
     for rodada in range(1, total_de_tentativas + 1):
         print("Tentativa {} de {}".format(rodada, total_de_tentativas))
